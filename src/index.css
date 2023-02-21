@@ -11,6 +11,7 @@
 
 *, *::after, *::before {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 html{
@@ -71,78 +72,103 @@ nav{
   height: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  /* border: 2px solid red; */
+}
+
+.nav-items{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
   justify-content: space-evenly;
+  align-items: center;
   /* border: 2px solid blue; */
 }
 
-.nav-div{
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* border: 1px solid white; */
-}
-.nav-div:not(:last-child){
-  min-width: 80px;
-}
-
-.nav-div:hover:not(:last-child){
-  background-color: blue;
-  color: white;
-  cursor: pointer;
+.nav-item:first-of-type{
+  margin-left: 1rem;
 }
 
 .nav-item{
+  height: min-content;
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
+  text-align: center;
   color: inherit;
   cursor: inherit;
   /* border: 1px solid green; */
 }
 
 .nav-item:hover{
-  color: inherit;
-  cursor: inherit;
-  background-color: inherit;
+  cursor: pointer;
 }
 
 
 /*------------------------------------ DROPDOWN LANGUAGES ----------------------------------------*/
-.dropbtn{
+
+.div-dropdown{
   color: inherit;
-  border: none;
-  background-color: gray;
+  margin: 0 1rem;
+}
+
+.div-dropdown button {
+  width: 100%;
+  height: auto;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  padding: 0.5rem;
   align-items: center;
+  color: inherit;
+  font-size: inherit;
+  border: none;
+  border-radius: 10px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.div-dropdown button:hover {
+  background-color: #f2f2f2;
 }
 
 .dropdown-content {
+  position: absolute;
+  right: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(46, 41, 51, 0.08),
+    0 4px 6px -2px rgba(71, 63, 79, 0.16);
+  z-index: 9999;
+  padding: 0;
+  min-width: fit-content;
+  list-style: none;
+  background-color: #fff;
+  border-radius: 0.5rem;
   display: none;
-  position: relative;
-  top: 0;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
 }
 
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
+.dropdown-content li {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding: 0.5rem;
+  margin: 0;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: inherit;
 }
 
-.dropdown-content a:hover {
-  background-color: #ddd;
+.dropdown-content li:hover{
+  background-color: lightblue;
+}
+.dropdown-content li a span{
+  display: inline-block;
+  vertical-align: middle;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown-show{
   display: block;
 }
 
@@ -155,8 +181,23 @@ nav{
   display: block;
 }
 
-.spain-icon{
-  background-image: url('imgs/catala.png');
+.cat-icon{
+  background-image: url('assets/catala.png');
+  background-size: 20px 20px;
+}
+
+.esp-icon{
+  background-image: url('assets/spanish.png');
+  background-size: 20px 20px;
+}
+
+.eng-icon{
+  background-image: url('assets/english.png');
+  background-size: 20px 20px;
+}
+
+.dan-icon{
+  background-image: url('assets/danish.png');
   background-size: 20px 20px;
 }
 
@@ -223,7 +264,7 @@ main{
 }
 
 .text-cat{
-  background-image: url('imgs/catala_flag.png');
+  background-image: url('assets/catala_flag.png');
   background-size: cover;
   background-clip: text;
   -webkit-background-clip: text;
@@ -307,18 +348,16 @@ main{
   align-items: center;
   border: 2px solid black;
   border-radius: 10px;
-  width: 15%;
+  width: 18%;
+}
+
+#ubication{
+  width: 20%;
 }
 
 .info-block p{
   font-weight: bold;
   text-align: center;
-  margin: 1rem 0;
-}
-
-.header-info-block{
-  border: 2px solid black;
-  border-radius: 10px;
 }
 
 .separator-info-block{
