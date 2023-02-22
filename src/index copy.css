@@ -6,10 +6,9 @@
   --bg-section-method: lightcyan;
   --bg-section-about: lightcyan;
   --bg-section-info: lightcyan;
-  --bg-section-contact: yellow;
+  --bg-section-contact: lightcyan;
   --color-title: orange;
-  --bg-btn2contact: orange;
-  --bg-btn2contact-hover: red;
+  --bg-btn-method: orange;
 }
 
 *, *::after, *::before {
@@ -105,42 +104,75 @@ nav{
   /* border: 1px solid green; */
 }
 
-.nav-item:hover, .lang-div:hover{
+.nav-item:hover{
   cursor: pointer;
 }
 
-/*----- langs in nav ----*/
 
-.lang-selector{
-  margin-right: 2rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+/*------------------------------------ DROPDOWN LANGUAGES ----------------------------------------*/
+
+.div-dropdown{
+  color: inherit;
+  margin: 0 1rem;
 }
 
-.lang-div{
+.div-dropdown button {
+  width: 100%;
+  height: auto;
+  display: flex;
+  padding: 0.5rem;
+  align-items: center;
+  color: inherit;
+  font-size: inherit;
+  border: none;
+  border-radius: 10px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.div-dropdown button:hover {
+  background-color: #f2f2f2;
+}
+
+.dropdown-content {
+  position: absolute;
+  right: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(46, 41, 51, 0.08),
+    0 4px 6px -2px rgba(71, 63, 79, 0.16);
+  z-index: 9999;
+  padding: 0;
+  min-width: fit-content;
+  list-style: none;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  display: none;
+}
+
+.dropdown-content li {
+  width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding: 0.5rem;
+  margin: 0;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: inherit;
 }
 
-#underline-lang-eng, #underline-lang-dan{
-  width: 100%;
-  height: 2px;
-  margin-top: 2px;
+.dropdown-content li:hover{
+  background-color: lightblue;
+}
+.dropdown-content li a span{
+  display: inline-block;
+  vertical-align: middle;
 }
 
-.active-lang{
-  background-color: black;
+.dropdown-show{
+  display: block;
 }
-
-.separator-lang{
-  width: 1px;
-  height: 30px;
-  margin: 0 3px;
-  background-color: black;
-}
-
 
 
 /*------------------------------------ ICONS ----------------------------------------*/
@@ -172,21 +204,29 @@ nav{
 }
 
 
+/*------------------------------------ LINE SEPARATOR ----------------------------------------*/
+
+.line-separator{
+  background-color: gray;
+  width: 90%;
+  height: 2px;
+  opacity: 50%;
+  border: none;
+  margin: 0 auto;
+}
 
 
 /*------------------------------------ SECTIONS ----------------------------------------*/
 
 main{
-  /* margin-top: 50px; */
+  margin-top: 50px;
 }
 
 .section{
-  /* height: 75vh; */
-  height: auto;
+  height: 75vh;
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-top: 50px;
 }
 
 .title-section{
@@ -265,6 +305,23 @@ main{
   border: 2px solid black;
 }
 
+.method-btn-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  max-width: 300px;
+  height: 3rem;
+  margin: 0 auto;
+  background-color: var(--bg-btn-method);
+  border: 2px solid black;
+}
+
+.method-btn{
+  text-decoration: none;
+  color: black;
+}
+
 /*------------------------------------ ABOUT ME ----------------------------------------*/
 
 .about-section{
@@ -292,82 +349,25 @@ main{
 
 /*------------------------------------ INFO ----------------------------------------*/
 
-/* --- levels --- */
 .info-section{
   background-color: var(--bg-section-info);
 }
-.container-levels{
+
+.info-body{
   display: flex;
   flex-direction: column;
 }
-
-.container-levels-info, .container-levels-time{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-
-.level-info, .level-schedule{
-  width: 25%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.level-schedule{
-  /* border: 2px solid red; */
-}
-
-.level-name{
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: orange;
-  margin-top: 1rem;
-}
-
-.level-img{
-  width: 100px;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-}
-
-.level-text{
-  text-align: center;
-}
-
-.level-time{
-  display: table-cell;
-  vertical-align: middle;
-  width: 100%;
-  /* min-height: 70px; */
-  text-align: center;
-  border: 2px solid black;
-  /* padding: auto 0; */
-}
-/* .level-text p{
-  margin: auto 0;
-} */
-
-
-/* --- price --- */
 
 .title-info{
+  text-align: center;
+  margin: 3rem 0;
+
 }
 
 .container-info{
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  margin: 1rem 0;
-  /* border: 2px solid red; */
-}
-
-#timetable{
-  width: 60%;
-}
-#price{
-  width: 20%;
 }
 
 .info-block{
@@ -378,8 +378,6 @@ main{
   border-radius: 10px;
   width: 18%;
 }
-
-/* --- ubication --- */
 
 #ubication{
   width: 20%;
@@ -396,55 +394,19 @@ main{
   height: 2px;
 }
 
-
-.container-ubi{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-
-
-
 #maps{
-  width: 70%;
-  max-width: 500px;
-  aspect-ratio: 1.5/1;
-  /* max-height: 500px; */
-  border: 1px solid black;
+  width: 95%;
+  height: auto;
+  border: 2px solid black;
   border-radius: 5px;
   margin: 5px 0;
 }
-
-.info-ubi{
-  display: flex;
-  height: min-content;
-  flex-direction: column;
-  margin-left: 1rem;
-}
-
-.info-ubi-name{
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.info-ubi-ubi{
-}
-
-.info-ubi-map{
-  margin-top: 2rem;
-  text-align: center;
-}
-
-
 /*------------------------------------ CONTACT ----------------------------------------*/
 
-.contact-section{
-  background-color: var(--bg-section-contact);
+#contact-section{
 }
-
-.contact-body{
+#contact-body{
+  background-color: var(--bg-section-contact);
   width: 100%;
 }
 
@@ -482,124 +444,18 @@ main{
 
 .transition-section{
   height: 20vh;
+  /* border: 2px solid black; */
 }
 
 .transition1{
-  background: linear-gradient(var(--bg-section-front), var(--bg-section-method));
+  background: linear-gradient(lightcyan, lightblue);
 }
 .transition2{
-  background: linear-gradient(var(--bg-section-method), var(--bg-section-about));
+  background: linear-gradient(lightblue, lightcoral);
 }
 .transition3{
-  background: linear-gradient(var(--bg-section-about), var(--bg-section-info));
+  background: linear-gradient(lightcoral, lightgreen);
 }
 .transition4{
-  background: linear-gradient(var(--bg-section-info), var(--bg-section-contact));
+  background: linear-gradient(lightgreen, lightgoldenrodyellow);
 }
-
-
-
-
-/*------------------------------------ OTHER ----------------------------------------*/
-
-/* --- separator sections line --- */
-.line-separator{
-  background-color: gray;
-  width: 90%;
-  height: 2px;
-  opacity: 50%;
-  border: none;
-  margin: 0 auto;
-}
-
-/* --- btn to go to contact --- */
-/* .btn2contact-div{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-  max-width: 300px;
-  height: 3rem;
-  margin: 0 auto;
-  background-color: var(--bg-btn-method);
-  border: 2px solid black;
-  border-radius: 5px;
-} */
-
-/* .btn2contact{
-  text-decoration: none;
-  text-align: center;
-  color: black;
-  border: 2px solid white;
-} */
-
-.div-center-btn2contact{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  border: 2px solid black;
-}
-
-/* .btn2contact{
-  width: 90%;
-  max-width: 250px;
-  height: 3rem;
-  display: block;
-  text-decoration: none;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  color: black;
-  background-color: var(--bg-btn2contact);
-  border: 2px solid black;
-  border-radius: 5px;
-}
-
-.btn2contact:hover{
-  text-decoration: none;
-  color: black;
-  background-color: var(--bg-btn2contact-hover);
-} */
-
-.btn2contact span{
-  /* width: 100%; */
-  /* display: inline-block; */
-  /* vertical-align: middle; */
-  /* margin: auto 0; */
-  /* padding: auto 2rem; */
-  /* border: 2px solid white; */
-  /* display: table-cell;
-  vertical-align: middle; */
-  /* height: 3rem;
-  width: 100%;
-  text-align: center;
-  padding: 0 auto; */
-}
-
-
-.btn2contact{
-  background-color: var(--bg-btn2contact);
-  width: 90%;
-  max-width: 250px;
-  height: 3rem;
-  text-align:center;
-  font-weight:bold;
-  cursor: pointer;
-  position:relative;
-  border: 2px solid blue;
-}
-
-.btn2contact:hover{
-  background-color: var(--bg-btn2contact-hover);
-}
-
-.link2contact{
-  position:absolute; 
-  width:100%;
-  height:100%;
-  top:0;
-  left: 0;
-  z-index: 1;
-  /* background-color: gray; */
-  border: 2px solid green;
-}   

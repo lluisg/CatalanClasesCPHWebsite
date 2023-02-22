@@ -3,8 +3,9 @@ import logo from '../assets/logo.png';
 
 const Front = (props) => {
   return (
-    <div id='front-section' className='section'>
-      <div className='container-fluid container-front'>
+    <div id="front-section" className='section front-section'>
+      <div className="front-body">
+      <div className='container-fluid'>
         <div className='row align-items-center'>
           <div className='col-2'></div>
           <div className='col-2 div-logo-front'>
@@ -18,6 +19,7 @@ const Front = (props) => {
               {sentences['title3'][props.lang]}</h2>
           </div>
           <div className='col-2'></div>
+        </div>
         </div>
       </div>
     </div>

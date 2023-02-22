@@ -5,7 +5,7 @@ const menuItems = [
       'CAT': 'Métode',
       'DAN': 'Methow',
     },
-    'url': "#methodology-section",
+    'url': "#method-section",
   },
   {
     'title': {
@@ -14,7 +14,7 @@ const menuItems = [
       'DAN': 'Abouts',
     },
     
-    'url': "#aboutme-section",
+    'url': "#about-section",
   },
   {
     'title': {

@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import PropTypes from "prop-types";
 
 import Header from "./Header"
 import Front from "./Front"
@@ -16,49 +15,46 @@ class CatalanWeb extends React.Component {
       curr_lang: 'ENG'
     }
 
-    this.handleClickLanguages = this.handleClickLanguages.bind(this);
+    this.ChangeLangActive = this.ChangeLangActive.bind(this);
   }
 
-  handleClickLanguages(lang){
+  ChangeLangActive(lang){
     console.log('change lang to:', lang)
     this.setState({
       curr_lang: lang
     });
 
-    let icon = document.getElementById('icon-lang')
-    let remove1, remove2, add1
+    let underline_eng = document.getElementById('underline-lang-eng')
+    let underline_dan = document.getElementById('underline-lang-dan')
+
     if(lang=='ENG'){
-      remove1 = 'cat-icon'
-      remove2 = 'dan-icon'
-      add1 = 'eng-icon'
-    }else if(lang == 'CAT'){
-      remove1 = 'eng-icon'
-      remove2 = 'dan-icon'
-      add1 = 'cat-icon'
+      underline_eng.classList.add('active-lang')
+      underline_dan.classList.remove('active-lang')
     }else if(lang == 'DAN'){
-      remove1 = 'eng-icon'
-      remove2 = 'cat-icon'
-      add1 = 'dan-icon'
+      underline_eng.classList.remove('active-lang')
+      underline_dan.classList.add('active-lang')
     }
 
-    icon.classList.remove(remove1, remove2)
-    icon.classList.add(add1)
+  }
+
+  componentDidMount(){
+    this.ChangeLangActive('ENG')
   }
 
 
   render() {
     return (
       <div className="body">
-        <Header handleClick={this.handleClickLanguages} lang={this.state.curr_lang} />
+        <Header handleClick={this.ChangeLangActive} lang={this.state.curr_lang} />
         <main>
           <Front lang={this.state.curr_lang} />
-          <div className='transition-section transition1'></div>
+          {/* <div className='transition-section transition1'></div> */}
           <Methodology lang={this.state.curr_lang} />
-          <div className='transition-section transition2'></div>
+          {/* <div className='transition-section transition2'></div> */}
           <AboutMe lang={this.state.curr_lang} />
-          <div className='transition-section transition3'></div>
+          {/* <div className='transition-section transition3'></div> */}
           <Info lang={this.state.curr_lang} />
-          <div className='transition-section transition4'></div>
+          {/* <div className='transition-section transition4'></div> */}
           <Contact lang={this.state.curr_lang} />
         </main>
       </div>

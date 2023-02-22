@@ -4,9 +4,12 @@ let image_link = "https://images.unsplash.com/photo-1510265382668-7b564935d7b5?i
 
 const AboutMe = (props) => {
   return (
-    <div id='aboutme-section' className='section'>
-      <p className='text-aboutme'>{sentences['text_about'][props.lang]}</p>
-      <img id='image-aboutme' src={image_link} />
+    <div id="about-section" className='section about-section'>
+      <h1 className="title-section">About Me</h1>
+      <div className='about-body'>
+        <p className='text-aboutme'>{sentences['text_about'][props.lang]}</p>
+        <img id='image-aboutme' src={image_link} />
+      </div>
     </div>
     );
 };
