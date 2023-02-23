@@ -7,7 +7,10 @@ const AboutMe = (props) => {
     <div id="about-section" className='section about-section'>
       <h1 className="title-section">About Me</h1>
       <div className='about-body'>
-        <p className='text-aboutme'>{sentences['text_about'][props.lang]}</p>
+        <div className="about-text">
+          <p className='title-maria'>Maria Garcia: Spanish Teacher for Adults</p>
+          <p className='text-maria'>{sentences['text_about'][props.lang]}</p>
+        </div>
         <img id='image-aboutme' src={image_link} />
       </div>
     </div>

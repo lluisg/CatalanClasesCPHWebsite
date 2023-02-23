@@ -1,3 +1,9 @@
+  --size-extrasmall: 410px;
+  --size-small: 576px;
+  --size-medium: 768px;
+  --size-large: 992px;
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

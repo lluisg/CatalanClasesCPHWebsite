@@ -14,10 +14,10 @@ const Methodology = (props) => {
 
       <div className="div-center-btn2contact">
         <div className="btn2contact">
-          Would like more info? Write Us
+          <a>Would like more info?</a>
+          <a>Write Us</a>
           <a href='#contact-section'><span className="link2contact"></span></a>
         </div>
-        {/* <a className="btn2contact" href={'#contact-section'}><span></span></a> */}
       </div>
     </div>
     );

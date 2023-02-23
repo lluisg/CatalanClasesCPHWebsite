@@ -10,6 +10,12 @@
   --color-title: orange;
   --bg-btn2contact: orange;
   --bg-btn2contact-hover: red;
+  --color-about-maria: orange;
+
+  --size-extrasmall: 410px;
+  --size-small: 576px;
+  --size-medium: 768px;
+  --size-large: 992px;
 }
 
 *, *::after, *::before {
@@ -18,13 +24,13 @@
 }
 
 html{
-font-size: 10;
-padding: 0;
-margin: 0;
+  font-size: 10;
+  padding: 0;
+  margin: 0;
 }
 
 html, body, #root{
-width: 100%;
+  width: 100%;
 }
 
 body {
@@ -43,55 +49,39 @@ code {
 
 
 /*------------------------------------ NAVBAR ----------------------------------------*/
+
 header{
   width: 100%;
   height: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   position: fixed;
   top: 0;
+  display: flex;
+  flex-direction: row;
   align-items: center;
   background-color: var(--bg-header);
   border-bottom: 2px solid black;
+  z-index: 999;
 }
 
-#logo-div{
-  display: inline-flex;
-  align-items: center;
-  margin-left: 1rem;
+.logo-div{
+  margin: 0 10px;
+  float: left;
   gap: 1rem;
-  /* border: 2px solid green; */
 }
 
-#logo-nav{
+.logo-img-nav{
+  float: right;
   width: 35px;
   aspect-ratio: 1/1;
   border-radius: 50%;
 }
 
 nav{
-  width: 70%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: right;
-  align-items: center;
-  /* border: 2px solid red; */
-}
-
-.nav-items{
-  width: 100%;
-  height: 100%;
+  flex: 1;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  /* border: 2px solid blue; */
-}
-
-.nav-item:first-of-type{
-  margin-left: 1rem;
 }
 
 .nav-item{
@@ -102,7 +92,6 @@ nav{
   text-align: center;
   color: inherit;
   cursor: inherit;
-  /* border: 1px solid green; */
 }
 
 .nav-item:hover, .lang-div:hover{
@@ -110,9 +99,9 @@ nav{
 }
 
 /*----- langs in nav ----*/
-
 .lang-selector{
-  margin-right: 2rem;
+  float: right;
+  margin: 0 10px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -142,6 +131,41 @@ nav{
 }
 
 
+@media (max-width: 992px){
+  nav{
+    background-color: orange;
+  }
+}
+
+@media (max-width: 768px){
+  nav{
+    background-color: red;
+  }
+}
+
+@media (max-width: 576px){
+  nav{
+    background-color: blue;
+  }
+  .nav-item{
+    font-size: 1.3rem;
+  }
+  .logo-div, .lang-selector{
+    margin: 0 5px;
+  }
+}
+
+@media (max-width: 410px){
+  nav{
+    background-color: green;
+  }
+  .nav-item{
+    font-size: 1rem;
+  }
+  .logo-div, .lang-selector{
+    margin: 0 2px;
+  }
+}
 
 /*------------------------------------ ICONS ----------------------------------------*/
 
@@ -186,23 +210,43 @@ main{
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-top: 50px;
+  /* padding-top: 50px; */
+  padding: 2rem 0;
 }
 
 .title-section{
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: 30px;
 }
 
 /*------------------------------------ PORTADA ----------------------------------------*/
 
 .front-section{
-  background-color: var(--bg-section-front);
-  height: calc(100vh - 50px);
+  height: 100vh;
+  background: url("assets/hero-bg3.png") top right no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-section-front);
+  opacity: .8;
+  z-index: 1;
 }
 
 .front-body{
+  width: 100%;
   height: 100%;
+  position: absolute;
   display: flex;
   align-items: center;
+  z-index: 2;
 }
 
 .div-logo-front{
@@ -211,6 +255,8 @@ main{
 
 #logo-front{
   width: 100%;
+  max-width: 80px;
+  /* height: 2rem; */
   aspect-ratio: 1/1;
   border-radius: 50%;
 }
@@ -278,9 +324,19 @@ main{
   align-items: center;
 }
 
-.text-aboutme{
-  max-width: 50%;
+.about-text{
+  width: 50%;
   font-size: 1.2rem;
+  margin: 20px 0;
+  border: 2px solid red;
+}
+
+.title-maria{
+  color: var(--color-about-maria);
+  margin: 2px 0;
+}
+
+.text-maria{
 }
 
 #image-aboutme{
@@ -290,18 +346,25 @@ main{
   border: 2px solid black;
 }
 
+@media (max-width: 992px){
+  .about-text{
+    width: 60%;
+  }
+}
+
 /*------------------------------------ INFO ----------------------------------------*/
 
 /* --- levels --- */
 .info-section{
   background-color: var(--bg-section-info);
 }
+
 .container-levels{
   display: flex;
   flex-direction: column;
 }
 
-.container-levels-info, .container-levels-time{
+.container-levels-img, .container-levels-info, .container-levels-time{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -320,9 +383,10 @@ main{
 
 .level-name{
   font-size: 1.5rem;
+  text-align: center;
   font-weight: bold;
   color: orange;
-  margin-top: 1rem;
+  margin: 10px 0;
 }
 
 .level-img{
@@ -339,18 +403,41 @@ main{
   display: table-cell;
   vertical-align: middle;
   width: 100%;
-  /* min-height: 70px; */
   text-align: center;
   border: 2px solid black;
-  /* padding: auto 0; */
+  padding: 5px 0;
 }
-/* .level-text p{
-  margin: auto 0;
-} */
 
+
+@media (max-width: 992px) {
+  .level-text{
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 768px) {
+  .level-img{
+    width: 75px;
+  }
+  .level-name{
+    margin-top: 5px;
+  }
+  .level-info, .level-schedule{
+    width: 30%;
+  }
+  .level-text{
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 576px) {
+  .level-info, .level-schedule{
+    width: 32%;
+  }
+  .level-name{
+    font-size: 1.3rem;
+  }
+}
 
 /* --- price --- */
-
 .title-info{
 }
 
@@ -396,45 +483,65 @@ main{
   height: 2px;
 }
 
-
 .container-ubi{
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
 }
 
-
-
-
 #maps{
-  width: 70%;
-  max-width: 500px;
+  width: 500px;
   aspect-ratio: 1.5/1;
-  /* max-height: 500px; */
   border: 1px solid black;
   border-radius: 5px;
-  margin: 5px 0;
+  margin: 5px 10px;
 }
 
 .info-ubi{
   display: flex;
   height: min-content;
   flex-direction: column;
-  margin-left: 1rem;
+  margin: 10px;
 }
 
 .info-ubi-name{
-  font-weight: bold;
-  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 1.8rem;
 }
 
 .info-ubi-ubi{
 }
 
 .info-ubi-map{
-  margin-top: 2rem;
-  text-align: center;
+  margin: 1rem 0 0 1rem;
+}
+
+@media (max-width: 992px) {
+  #maps{
+    width: 400px;
+  }
+}
+@media (max-width: 768px) {
+  #maps{
+    width: 300px;
+  }
+}
+@media (max-width: 576px) {
+  #maps{
+    width: 200px;
+  }
+  .info-ubi-name{
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 410px) {
+  #maps{
+    width: 150px;
+  }
+  .info-ubi-name{
+    font-size: 1.3rem;
+  }
 }
 
 
@@ -513,80 +620,29 @@ main{
 }
 
 /* --- btn to go to contact --- */
-/* .btn2contact-div{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-  max-width: 300px;
-  height: 3rem;
-  margin: 0 auto;
-  background-color: var(--bg-btn-method);
-  border: 2px solid black;
-  border-radius: 5px;
-} */
-
-/* .btn2contact{
-  text-decoration: none;
-  text-align: center;
-  color: black;
-  border: 2px solid white;
-} */
 
 .div-center-btn2contact{
   width: 100%;
   display: flex;
   justify-content: center;
-  border: 2px solid black;
 }
-
-/* .btn2contact{
-  width: 90%;
-  max-width: 250px;
-  height: 3rem;
-  display: block;
-  text-decoration: none;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  color: black;
-  background-color: var(--bg-btn2contact);
-  border: 2px solid black;
-  border-radius: 5px;
-}
-
-.btn2contact:hover{
-  text-decoration: none;
-  color: black;
-  background-color: var(--bg-btn2contact-hover);
-} */
-
-.btn2contact span{
-  /* width: 100%; */
-  /* display: inline-block; */
-  /* vertical-align: middle; */
-  /* margin: auto 0; */
-  /* padding: auto 2rem; */
-  /* border: 2px solid white; */
-  /* display: table-cell;
-  vertical-align: middle; */
-  /* height: 3rem;
-  width: 100%;
-  text-align: center;
-  padding: 0 auto; */
-}
-
 
 .btn2contact{
   background-color: var(--bg-btn2contact);
   width: 90%;
   max-width: 250px;
-  height: 3rem;
+  height: auto;
   text-align:center;
   font-weight:bold;
   cursor: pointer;
   position:relative;
-  border: 2px solid blue;
+  border: 2px solid black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem 1rem;
 }
 
 .btn2contact:hover{
@@ -601,5 +657,4 @@ main{
   left: 0;
   z-index: 1;
   /* background-color: gray; */
-  border: 2px solid green;
 }   

@@ -10,6 +10,7 @@ const Header = (props) => {
     <header>
         <LogoHeader />
         <Navbar lang={props.lang} handleClick={props.handleClick} />
+        <LangSelector handleClick={props.handleClick} />
     </header>
   );
 };
@@ -18,9 +19,9 @@ Header.propTypes = { lang: PropTypes.string.isRequired };
 
 const LogoHeader = (props) => {
   return(
-    <div id='logo-div'>
+    <div className='logo-div'>
       <a className='nav-item' href="#front-section" accessKey="c">
-        <img id="logo-nav" src={logo} alt='logo cat' />
+        <img className="logo-img-nav" src={logo} alt='logo cat' />
       </a>
     </div>
   );
@@ -29,14 +30,11 @@ const LogoHeader = (props) => {
 const Navbar = (props) => {
   return(
     <nav>
-      <div className='nav-items'>
-        {menuItems.map((menu, index) => {
-          return (
-            <a className="nav-item" key={index} href={menu.url}>{menu.title[props.lang]}</a>
-          );
-        })}
-      </div>
-      <LangSelector handleClick={props.handleClick} />
+      {menuItems.map((menu, index) => {
+        return (
+          <a className="nav-item" key={index} href={menu.url}>{menu.title[props.lang]}</a>
+        );
+      })}
     </nav>
   );
 }

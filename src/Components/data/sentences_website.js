@@ -12,9 +12,14 @@ const sentences = {
     'DAN': 'Catalansk',
   },
   'title3': {
-    'ENG': 'in Copenhagen',
-    'CAT': 'a Copenhaguen',
-    'DAN': 'i Kovenhavn',
+    'ENG': 'in',
+    'CAT': 'a',
+    'DAN': 'i',
+  },
+  'title4': {
+    'ENG': 'CPH',
+    'CAT': 'Copenhaguen',
+    'DAN': 'Kovenhavn',
   },
 
   'text_method': {

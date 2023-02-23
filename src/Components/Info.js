@@ -18,23 +18,33 @@ const Info = (props) => {
 const ClasesInfo = (props) => {
   return (
     <div className="container-levels">
-      {/* container for the info */}
-      <div className="container-levels-info">
+      {/* container for the imgs and title */}
+      <div className="container-levels-img">
         <div id='basic-level' className="level-info">
           <img className="level-img" src={image_link} />
           <p className="level-name">Basic Level</p>
-          <p className="level-text">You don't have pajolera idea to talk catalan, you only know that Catalonia is inside Spain</p>
         </div>
         <div id='medium-level' className="level-info">
           <img className="level-img" src={image_link} />
           <p className="level-name">Medium Level</p>
-          <p className="level-text">You know things and some words, but you need grammar and more vocabulary. You know someone who talks it and tried to teach you while drunk.</p>
         </div>
         <div id='advanced-level' className="level-info">
           <img className="level-img" src={image_link} />
           <p className="level-name">Advance Level</p>
+        </div>
+      </div>
+
+      {/* container for the info */}
+      <div className="container-levels-info">
+        <div id='basic-level' className="level-info">
+          <p className="level-text">You don't have pajolera idea to talk catalan, you only know that Catalonia is inside Spain</p>
+        </div>
+        <div id='medium-level' className="level-info">
+          <p className="level-text">You know things and some words, but you need grammar and more vocabulary. You know someone who talks it and tried to teach you while drunk.</p>
+        </div>
+        <div id='advanced-level' className="level-info">
           <p className="level-text">You know how to talk catalan, but you need someone who talk with and ccorrects you. And teaches you some advanced stuff.</p>
-          </div>
+        </div>
       </div>
 
       {/* container for the schedule */}
@@ -46,22 +56,10 @@ const ClasesInfo = (props) => {
           <p className="level-time">Wednesdays:<br/>18:00-19:30h</p>
         </div>
         <div id='advanced-level-time' className="level-schedule">
-          <p className="level-time not-available">Not available for now.
-          {/* Write us if interested.</p> */}
-          </p>
-          <a className="btn2contact2" href={'#contact-section'}>Write us if interested.</a>
-        </div>
-      </div>
-
-      {/* container for the button */}
-      <div className="container-levels-time">
-        <div className="level-schedule">
-        </div>
-        <div className="level-schedule">
-        </div>
-        <div className="level-schedule">
-          <div className="btn2contact-div">
-            <a className="btn2contact" href={'#contact-section'}>Write Us If Interested</a>
+          <p className="level-time not-available">Not available for now.</p>
+          <div className="btn2contact">
+            <a>Write Us if Interested</a>
+            <a href='#contact-section'><span className="link2contact"></span></a>
           </div>
         </div>
       </div>
@@ -99,8 +97,8 @@ const UbicationInfo = (props) => {
                 referrerPolicy="no-referrer-when-downgrade" />
       <div className="info-ubi">
         <p className="info-ubi-name">Skolen Ved Bülosvej</p>
-        <p className="info-ubi-ubi">Fuglevangsvej 8, 1962 Frederiksberg</p>
-        <a className="info-ubi-map">Open in Maps</a>
+        <p className="info-ubi-ubi">Fuglevangsvej 8,<br/> 1962 Frederiksberg</p>
+        <a className="info-ubi-map" href="https://goo.gl/maps/gSztHVPQKhpiXmZcA" target="_blank" >Open in Maps</a>
       </div>
     </div>
   )
