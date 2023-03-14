@@ -50,13 +50,13 @@ const ClasesInfo = (props) => {
       {/* container for the schedule */}
       <div className="container-levels-time">
         <div id='basic-level-time' className="level-schedule">
-          <p className="level-time">Tuesdays:<br/>18:00-19:30h</p>
+          {/* <p className="level-time">Tuesdays:<br/>18:00-19:30h</p> */}
         </div>
         <div id='medium-level-time' className="level-schedule">
-          <p className="level-time">Wednesdays:<br/>18:00-19:30h</p>
+          {/* <p className="level-time">Wednesdays:<br/>18:00-19:30h</p> */}
         </div>
         <div id='advanced-level-time' className="level-schedule">
-          <p className="level-time not-available">Not available for now.</p>
+          {/* <p className="level-time not-available">Not available for now.</p> */}
           <div className="btn2contact">
             <a>Write Us if Interested</a>
             <a href='#contact-section'><span className="link2contact"></span></a>

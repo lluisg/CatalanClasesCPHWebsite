@@ -9,7 +9,9 @@ const AboutMe = (props) => {
       <div className='about-body'>
         <div className="about-text">
           <p className='title-maria'>Maria Garcia: Spanish Teacher for Adults</p>
-          <p className='text-maria'>{sentences['text_about'][props.lang]}</p>
+          <p className='text-maria'>{sentences['text_about1'][props.lang]}</p>
+          <p className='text-maria'>{sentences['text_about2'][props.lang]}</p>
+          <p className='text-maria'>{sentences['text_about3'][props.lang]}</p>
         </div>
         <img id='image-aboutme' src={image_link} />
       </div>
