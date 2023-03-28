@@ -1,14 +1,21 @@
 /* Code by Lluis Guardia */
 
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+
 :root{
-  --bg-header: lightgoldenrodyellow;
+  --bg-header: black;
+
+  --bg: white;
+
   --bg-section-front: lightcyan;
-  --bg-section-method: lightcyan;
-  --bg-section-about: lightcyan;
-  --bg-section-info: lightcyan;
-  --bg-section-contact: yellow;
+  --bg-section-method: var(--bg);
+  --bg-section-about: var(--bg);
+  --bg-section-info: var(--bg);
+  --bg-section-contact: lightcyan;
   --color-title: orange;
-  --bg-btn2contact: orange;
+  --bg-btn2contact: yellow;
   --bg-btn2contact-hover: red;
   --color-about-maria: orange;
 
@@ -27,6 +34,7 @@ html{
   font-size: 10;
   padding: 0;
   margin: 0;
+  font-family: Arial;
 }
 
 html, body, #root{
@@ -35,17 +43,17 @@ html, body, #root{
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+  /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace; */
+  }
 
 
 /*------------------------------------ NAVBAR ----------------------------------------*/
@@ -58,7 +66,9 @@ header{
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: var(--bg-header);
+  /* background-color: var(--bg-header); */
+  background-color:dimgray;
+  color: white;
   border-bottom: 2px solid black;
   z-index: 999;
 }
@@ -216,8 +226,18 @@ main{
 
 .title-section{
   text-align: center;
-  text-decoration: underline;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: bolder;
   margin-bottom: 30px;
+}
+
+.container-section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* cc */
 }
 
 /*------------------------------------ PORTADA ----------------------------------------*/
@@ -272,19 +292,22 @@ main{
   margin-top: auto;
   /* border: 2px solid black; */
   color: var(--color-title);
-  -webkit-text-stroke: 2px black;
+  /* -webkit-text-stroke: 2px black; */
+
+  /* font-family: 'Comfortaa'; */
+  /* font-family: 'Caveat'; */
+  color: black;
+  font-weight:bolder;
 }
 
 .text-cat{
-  background-image: url('assets/catala_flag.png');
+  /* background-image: url('assets/catala_flag.png'); */
   background-size: cover;
   background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-stroke: 2px black;
-  color: transparent;
+  /* -webkit-background-clip: text;
+  -webkit-text-stroke: 2px black; */
+  /* color: transparent; */
 }
-
-
 
 /*------------------------------------ METHODOLOGY ----------------------------------------*/
 
@@ -300,9 +323,10 @@ main{
   margin: 3rem 0;
 }
 
-.text-method{
+.method-text{
   max-width: 50%;
   font-size: 1.2rem;
+  text-align: justify;
 }
 
 #image-method{
@@ -313,9 +337,17 @@ main{
 }
 
 /*------------------------------------ ABOUT ME ----------------------------------------*/
+.card-section{
+  width: 95%;
+  margin: 25px 0;
+
+  background-color: var(--bg-section-about);
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px black;
+}
 
 .about-section{
-  background-color: var(--bg-section-about);
 }
 
 .about-body{
@@ -344,7 +376,7 @@ main{
   width: 20%;
   aspect-ratio: 1/1;
   border-radius: 20px;
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
 
 @media (max-width: 992px){
@@ -355,91 +387,65 @@ main{
 
 /*------------------------------------ INFO ----------------------------------------*/
 
-/* --- levels --- */
-.info-section{
-  background-color: var(--bg-section-info);
-}
 
-.container-levels{
+/* --- question --- */
+.container-question{
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  margin: 4rem 0;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  margin-top: 20px;
 }
 
-.container-levels-img, .container-levels-info, .container-levels-time{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+.div-question{
+  width: 60%;
 }
 
-.level-info, .level-schedule{
-  width: 25%;
+.question-info{
+  font-size: 1.5rem;
+}
+
+
+.info-card{
+  width: 500px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.level-schedule{
-  /* border: 2px solid red; */
-}
-
-.level-name{
-  font-size: 1.5rem;
-  text-align: center;
-  font-weight: bold;
-  color: orange;
-  margin: 10px 0;
-}
-
-.level-img{
-  width: 100px;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-}
-
-.level-text{
-  text-align: center;
-}
-
-.level-time{
-  display: table-cell;
-  vertical-align: middle;
-  width: 100%;
-  text-align: center;
+  justify-content: center;
   border: 2px solid black;
-  padding: 5px 0;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px black;
 }
 
-
-@media (max-width: 992px) {
-  .level-text{
-    font-size: 0.9rem;
-  }
+.info-body{
 }
-@media (max-width: 768px) {
-  .level-img{
-    width: 75px;
-  }
-  .level-name{
-    margin-top: 5px;
-  }
-  .level-info, .level-schedule{
-    width: 30%;
-  }
-  .level-text{
-    font-size: 0.8rem;
-  }
-}
-@media (max-width: 576px) {
-  .level-info, .level-schedule{
-    width: 32%;
-  }
-  .level-name{
-    font-size: 1.3rem;
-  }
+/* --- when --- */
+.info-date-dayweek{
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
-/* --- price --- */
+.info-date-days{
+  font-size: 0.9rem;
+}
+
+.info-date-hour{
+  font-size: 1.3rem;
+}
+
+/* --- how much --- */
+.info-price-money{
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.info-price-sessions{  
+  font-size: 1.6rem;
+}
+
 .title-info{
 }
 
@@ -448,52 +454,25 @@ main{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  /* border: 2px solid red; */
-  margin: 5rem 0;
+  padding: 0 10px;
 }
 
-#timetable{
-  width: 60%;
-}
-#price{
-  width: 20%;
-}
 
 .info-block{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
   border: 2px solid black;
   border-radius: 10px;
   width: 18%;
 }
 
+
 /* --- ubication --- */
 
-#ubication{
-  width: 20%;
-}
-
-.info-block p{
-  font-weight: bold;
-  text-align: center;
-}
-
-.separator-info-block{
-  width: 80%;
-  background-color: black;
-  height: 2px;
-}
-
-.container-ubi{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin: 5rem 0;
-}
-
 #maps{
-  width: 500px;
+  width: 450px;
   aspect-ratio: 1.5/1;
   border: 1px solid black;
   border-radius: 5px;
@@ -502,22 +481,26 @@ main{
 
 .info-ubi{
   display: flex;
-  height: min-content;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin: 10px;
+  text-align: center;
 }
 
 .info-ubi-name{
+  width: 100%;
   text-transform: uppercase;
   font-weight: 900;
   font-size: 1.8rem;
 }
 
 .info-ubi-ubi{
+  width: 50%;
 }
 
 .info-ubi-map{
-  margin: 1rem 0 0 1rem;
+  width: 50%;
+  /* margin: 1rem 0 0 1rem; */
 }
 
 @media (max-width: 992px) {
@@ -624,23 +607,33 @@ main{
 
 /* --- btn to go to contact --- */
 
-.div-center-btn2contact{
+
+.bubble{
   width: 100%;
+  max-width: 500px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+
+  font-size: large;
+  text-transform: uppercase;
+  font-weight: bold;
 }
+
 
 .btn2contact{
   background-color: var(--bg-btn2contact);
-  width: 90%;
-  max-width: 250px;
+  width: 100%;
   height: auto;
   text-align:center;
   font-weight:bold;
   cursor: pointer;
   position:relative;
   border: 2px solid black;
-  border-radius: 5px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px black;
+
   display: flex;
   flex-direction: column;
   justify-content: center;

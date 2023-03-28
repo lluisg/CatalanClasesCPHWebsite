@@ -2,7 +2,7 @@ import sentences from "./data/sentences_website"
 
 const Contact = (props) => {
   return (
-    <div id="contact-section" className='section contact-section'>
+    <div id="contact-section" className='section contact-section card-section'>
       <h1 className="title-section">Contact</h1>
       <div className='method-body'>
         <div className="container mb-5">

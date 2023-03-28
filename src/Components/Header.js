@@ -10,7 +10,7 @@ const Header = (props) => {
     <header>
         <LogoHeader />
         <Navbar lang={props.lang} handleClick={props.handleClick} />
-        <LangSelector handleClick={props.handleClick} />
+        {/* <LangSelector handleClick={props.handleClick} /> */}
     </header>
   );
 };

@@ -46,7 +46,7 @@ const sentences = {
 
 
   'title_info': {
-    'ENG': 'Clases Information:',
+    'ENG': 'Information',
     'CAT': 'Informació de les classes:',
     'DAN': 'Clas Infok:',
   },
@@ -122,7 +122,7 @@ const sentences = {
   },
 
   'use_form': {
-    'ENG': 'Please use the following form if you want to get in touch with me directly.',
+    'ENG': 'Please use the following form if you want to get in touch directly.',
     'CAT': 'Pots fer servir el següent formulari per posar-te en contacte amb mi.',
     'DAN': 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.',
   }
