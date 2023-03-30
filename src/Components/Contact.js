@@ -2,7 +2,7 @@ const Contact = (props) => {
   return (
     <div id="contact-section" className='section contact-section card-section'>
       <h1 className="title-section">Contact</h1>
-      <div className='method-body'>
+      <div className='contact-body'>
         <div className="container mb-5">
           <p className="text-center h4">Please use the following form if you want to get in touch directly.</p>
           <form id="contact-form" action="https://formsubmit.co/f1aa8b04c973b5f015f60fb3e5245d09" method="POST" className="p-4" encType="multipart/form-data">

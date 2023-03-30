@@ -14,7 +14,7 @@ const Header = (props) => {
 const LogoHeader = (props) => {
   return(
     <div className='logo-div'>
-      <a className='nav-item' href="#front-section" accessKey="c">
+      <a className='logo-item' href="#front-section" accessKey="c">
         <img className="logo-img-nav" src={logo} alt='logo cat' />
       </a>
     </div>

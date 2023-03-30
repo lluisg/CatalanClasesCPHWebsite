@@ -14,20 +14,21 @@
   --bg-section-about: var(--bg);
   --bg-section-info: var(--bg);
   --bg-section-contact: lightcyan;
-  --color-title: orange;
+
+  --bg-header: dimgray;
+  --bg-color: white;
+
   --bg-btn2contact: yellow;
   --bg-btn2contact-hover: red;
-  --color-about-maria: orange;
 
-  --size-extrasmall: 410px;
-  --size-small: 576px;
-  --size-medium: 768px;
   --size-large: 992px;
+  --size-medium: 768px;
+  --size-small: 576px;
+  --size-extrasmall: 410px;
 }
 
 *, *::after, *::before {
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
 html{
@@ -35,10 +36,12 @@ html{
   padding: 0;
   margin: 0;
   font-family: Arial;
+  scroll-behavior: smooth;
 }
 
 html, body, #root{
   width: 100%;
+  overflow-x: hidden; 
 }
 
 body {
@@ -49,11 +52,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-code {
-  /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace; */
-  }
 
 
 /*------------------------------------ NAVBAR ----------------------------------------*/
@@ -66,23 +64,23 @@ header{
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* background-color: var(--bg-header); */
-  background-color:dimgray;
-  color: white;
+  background-color: var(--bg-header);
+  color: var(--bg-color);
   border-bottom: 2px solid black;
   z-index: 999;
 }
 
 .logo-div{
-  margin: 0 10px;
-  float: left;
-  gap: 1rem;
+  width: 40px;
+  min-width: 40px;
+  display: flex;
+  align-items: center;
+  margin: 0 50px;
+  cursor: pointer;
 }
 
 .logo-img-nav{
-  float: right;
-  width: 35px;
-  aspect-ratio: 1/1;
+  width: 100%;
   border-radius: 50%;
 }
 
@@ -90,53 +88,23 @@ nav{
   flex: 1;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: right;
   align-items: center;
+  border: 2px solid blue;
 }
 
 .nav-item{
-  height: min-content;
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
-  text-align: center;
   color: inherit;
-  cursor: inherit;
+  border-radius: 10px;
+  margin-right: 5%;
 }
 
-.nav-item:hover, .lang-div:hover{
+.nav-item:hover{
   cursor: pointer;
-}
-
-/*----- langs in nav ----*/
-.lang-selector{
-  float: right;
-  margin: 0 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.lang-div{
-  display: flex;
-  flex-direction: column;
-}
-
-#underline-lang-eng, #underline-lang-dan{
-  width: 100%;
-  height: 2px;
-  margin-top: 2px;
-}
-
-.active-lang{
-  background-color: black;
-}
-
-.separator-lang{
-  width: 1px;
-  height: 30px;
-  margin: 0 3px;
+  color: lightblue;
   background-color: black;
 }
 
@@ -151,17 +119,21 @@ nav{
   nav{
     background-color: red;
   }
+  .logo-div{
+    margin: 0 10px;
+  }
 }
 
 @media (max-width: 576px){
   nav{
     background-color: blue;
   }
-  .nav-item{
-    font-size: 1.3rem;
-  }
-  .logo-div, .lang-selector{
+  .logo-div{
     margin: 0 5px;
+  }
+  .nav-item{
+    margin-right: 3%;
+    font-size: 1.4rem;
   }
 }
 
@@ -170,42 +142,9 @@ nav{
     background-color: green;
   }
   .nav-item{
-    font-size: 1rem;
-  }
-  .logo-div, .lang-selector{
-    margin: 0 2px;
+    font-size: 1.3rem;
   }
 }
-
-/*------------------------------------ ICONS ----------------------------------------*/
-
-.icon {
-  height: 20px;
-  width: 20px;
-  display: block;
-}
-
-.cat-icon{
-  background-image: url('assets/catala.png');
-  background-size: 20px 20px;
-}
-
-.esp-icon{
-  background-image: url('assets/spanish.png');
-  background-size: 20px 20px;
-}
-
-.eng-icon{
-  background-image: url('assets/english.png');
-  background-size: 20px 20px;
-}
-
-.dan-icon{
-  background-image: url('assets/danish.png');
-  background-size: 20px 20px;
-}
-
-
 
 
 /*------------------------------------ SECTIONS ----------------------------------------*/
@@ -237,8 +176,22 @@ main{
   align-items: center;
   justify-content: center;
   width: 100%;
-  /* cc */
 }
+
+.card-section{
+  width: 95%;
+  margin: 25px 0;
+
+  background-color: var(--bg-section-about);
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px black;
+}
+
+#about-section, #method-section, #info-section, #contact-section{
+  scroll-margin-top: 70px;
+}
+
 
 /*------------------------------------ PORTADA ----------------------------------------*/
 
@@ -269,10 +222,6 @@ main{
   z-index: 2;
 }
 
-.div-logo-front{
-  /* border: 2px solid red; */
-}
-
 #logo-front{
   width: 100%;
   max-width: 80px;
@@ -281,102 +230,13 @@ main{
   border-radius: 50%;
 }
 
-.div-text-front{
-  /* border: 2px solid blue; */
-}
-
 .text-front{
   font-size: 5rem;
   font-weight: bold;
   text-align: center;
   margin-top: auto;
-  /* border: 2px solid black; */
-  color: var(--color-title);
-  /* -webkit-text-stroke: 2px black; */
-
-  /* font-family: 'Comfortaa'; */
-  /* font-family: 'Caveat'; */
   color: black;
   font-weight:bolder;
-}
-
-.text-cat{
-  /* background-image: url('assets/catala_flag.png'); */
-  background-size: cover;
-  background-clip: text;
-  /* -webkit-background-clip: text;
-  -webkit-text-stroke: 2px black; */
-  /* color: transparent; */
-}
-
-/*------------------------------------ METHODOLOGY ----------------------------------------*/
-
-.method-section{
-  background-color: var(--bg-section-method);
-}
-
-.method-body{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  margin: 3rem 0;
-}
-
-.method-text{
-  max-width: 50%;
-  font-size: 1.2rem;
-  text-align: justify;
-}
-
-#image-method{
-  width: 20%;
-  aspect-ratio: 1/1;
-  border-radius: 20px;
-  border: 2px solid black;
-}
-
-/*------------------------------------ ABOUT ME ----------------------------------------*/
-.card-section{
-  width: 95%;
-  margin: 25px 0;
-
-  background-color: var(--bg-section-about);
-  border: 2px solid black;
-  border-radius: 10px;
-  box-shadow: 3px 3px 10px black;
-}
-
-.about-section{
-}
-
-.about-body{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.about-text{
-  width: 60%;
-  font-size: 1.2rem;
-  margin: 20px 0;
-  text-align: justify;
-}
-
-.title-maria{
-  color: var(--color-about-maria);
-  margin: 2px 0;
-}
-
-.text-maria{
-}
-
-#image-aboutme{
-  width: 20%;
-  aspect-ratio: 1/1;
-  border-radius: 20px;
-  /* border: 2px solid black; */
 }
 
 @media (max-width: 992px){
@@ -385,8 +245,198 @@ main{
   }
 }
 
+/* --- btn to go to contact --- */
+.bubble{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-size: large;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.btn2contact{
+  background-color: var(--bg-btn2contact);
+  width: 100%;
+  height: auto;
+  text-align:center;
+  font-weight:bold;
+  cursor: pointer;
+  position:relative;
+  border: 2px solid black;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px black;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem 1rem;
+}
+
+.btn2contact:hover{
+  background-color: var(--bg-btn2contact-hover);
+}
+
+.link2contact{
+  position:absolute; 
+  width:100%;
+  height:100%;
+  top:0;
+  left: 0;
+  z-index: 1;
+  /* background-color: gray; */
+}   
+
+@media (max-width: 992px){
+  .bubble{
+    max-width: 700px;
+  }
+}
+
+/* @media (max-width: 768px){
+  nav{
+    background-color: red;
+  }
+  .logo-div{
+    margin: 0 10px;
+  }
+} */
+
+/* @media (max-width: 576px){
+  nav{
+    background-color: blue;
+  }
+  .logo-div{
+    margin: 0 5px;
+  }
+  .nav-item{
+    margin-right: 3%;
+    font-size: 1.4rem;
+  }
+} */
+
+/* @media (max-width: 410px){
+  nav{
+    background-color: green;
+  }
+  .nav-item{
+    font-size: 1.3rem;
+  }
+} */
+
+
+/*------------------------------------ ABOUT ME ----------------------------------------*/
+.about-body{
+  width: 95%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  /* border: 2px solid red; */
+}
+
+.about-text{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  text-align: justify;
+  align-items: center;
+  /* border: 2px solid green; */
+}
+
+.text-top{
+  /* width: 80%; */
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid blue; */
+}
+
+.text-maria{
+  margin: 10px;
+  /* border: 2px solid lightblue; */
+}
+
+.about-img{
+  margin-left: 30px;
+}
+
+#image-aboutme{
+  width: 210px;
+  aspect-ratio: 1/1;
+  border-radius: 20px;
+}
+
+@media (max-width: 992px){
+  .about-text{
+    width: 70%;
+  }
+}
+
+/*------------------------------------ METHODOLOGY ----------------------------------------*/
+.method-section{
+  background-color: var(--bg-section-method);
+}
+
+.method-body{
+  width: 95%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  /* border: 2px solid red; */
+}
+
+.method-text{
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  font-size: 1.2rem;
+  text-align: justify;
+  justify-content: center;
+  /* border: 2px solid green; */
+}
+
+.method-img{
+  margin-right: 30px;
+}
+
+#image-method{
+  width: 180px;
+  aspect-ratio: 1/1;
+  border-radius: 20px;
+}
+
 /*------------------------------------ INFO ----------------------------------------*/
 
+.info-card{
+  width: 500px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px black;
+}
+
+.info-body{
+}
+
+.container-info{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 0 10px;
+}
 
 /* --- question --- */
 .container-question{
@@ -406,21 +456,6 @@ main{
   font-size: 1.5rem;
 }
 
-
-.info-card{
-  width: 500px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid black;
-  border-radius: 10px;
-  box-shadow: 5px 5px 10px black;
-}
-
-.info-body{
-}
 /* --- when --- */
 .info-date-dayweek{
   font-size: 1.8rem;
@@ -446,31 +481,7 @@ main{
   font-size: 1.6rem;
 }
 
-.title-info{
-}
-
-.container-info{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  padding: 0 10px;
-}
-
-
-.info-block{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid black;
-  border-radius: 10px;
-  width: 18%;
-}
-
-
 /* --- ubication --- */
-
 #maps{
   width: 450px;
   aspect-ratio: 1.5/1;
@@ -570,87 +581,3 @@ main{
     flex-direction: column;
   }
 }
-
-/*------------------------------------ TRANSITIONS ----------------------------------------*/
-
-.transition-section{
-  height: 20vh;
-}
-
-.transition1{
-  background: linear-gradient(var(--bg-section-front), var(--bg-section-method));
-}
-.transition2{
-  background: linear-gradient(var(--bg-section-method), var(--bg-section-about));
-}
-.transition3{
-  background: linear-gradient(var(--bg-section-about), var(--bg-section-info));
-}
-.transition4{
-  background: linear-gradient(var(--bg-section-info), var(--bg-section-contact));
-}
-
-
-
-
-/*------------------------------------ OTHER ----------------------------------------*/
-
-/* --- separator sections line --- */
-.line-separator{
-  background-color: gray;
-  width: 90%;
-  height: 2px;
-  opacity: 50%;
-  border: none;
-  margin: 0 auto;
-}
-
-/* --- btn to go to contact --- */
-
-
-.bubble{
-  width: 100%;
-  max-width: 500px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  font-size: large;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-
-.btn2contact{
-  background-color: var(--bg-btn2contact);
-  width: 100%;
-  height: auto;
-  text-align:center;
-  font-weight:bold;
-  cursor: pointer;
-  position:relative;
-  border: 2px solid black;
-  border-radius: 20px;
-  box-shadow: 5px 5px 10px black;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0.3rem 1rem;
-}
-
-.btn2contact:hover{
-  background-color: var(--bg-btn2contact-hover);
-}
-
-.link2contact{
-  position:absolute; 
-  width:100%;
-  height:100%;
-  top:0;
-  left: 0;
-  z-index: 1;
-  /* background-color: gray; */
-}   
