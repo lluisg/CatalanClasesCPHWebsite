@@ -1,4 +1,3 @@
-import sentences from "./data/sentences_website"
 import logo from '../assets/logo.png';
 
 const Front = (props) => {
@@ -16,11 +15,6 @@ const Front = (props) => {
                 <a style={{fontFamily:'Caveat'}}>in Copenhagen</a>
                 {/* <img id="logo-front" src={logo} /> */}
               </h2>
-              {/* <h2 className='text-front'>
-                {sentences['title1'][props.lang]} <img id="logo-front" src={logo} />  <br/>
-                <span className='text-cat'>{sentences['title2'][props.lang]}</span>   <br/>
-                {sentences['title3'][props.lang]} {sentences['title4'][props.lang]}
-              </h2> */}
             </div>
           </div>
           <div className="row" style={{marginTop: '100px'}}>

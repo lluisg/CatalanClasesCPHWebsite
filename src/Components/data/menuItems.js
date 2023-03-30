@@ -1,37 +1,18 @@
 const menuItems = [
   {
-    'title': {
-      'ENG': 'Method',
-      'CAT': 'Métode',
-      'DAN': 'Methow',
-    },
+    'title': 'Method',
     'url': "#method-section",
   },
   {
-    'title': {
-      'ENG': 'About',
-      'CAT': 'Sobre',
-      'DAN': 'Abouts',
-    },
-    
+    'title': 'About',    
     'url': "#about-section",
   },
   {
-    'title': {
-      'ENG': 'Info',
-      'CAT': 'Info',
-      'DAN': 'Infk',
-    },
-    
+    'title': 'Info',
     'url': "#info-section",
   },
   {
-    'title': {
-      'ENG': 'Contact',
-      'CAT': 'Contacte',
-      'DAN': 'Kontack',
-    },
-    
+    'title': 'Contact',
     'url': "#contact-section",
   }
 ]

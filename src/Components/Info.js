@@ -1,14 +1,9 @@
-
-import sentences from "./data/sentences_website"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faLocationDot, faMoneyBill } from "@fortawesome/free-solid-svg-icons";
-
-let image_link = "https://images.unsplash.com/photo-1510265382668-7b564935d7b5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80"
 
 const Info = (props) => {
   return (
     <div id="info-section" className='section info-section card-section'>
-      {/* <h2 className='title-section'>{sentences['title_info'][props.lang]}</h2> */}
       <h2 className='title-section'>Information</h2>
       <div className='info-body'>
         {/* <ClasesInfo /> */}
@@ -22,59 +17,6 @@ const Info = (props) => {
     </div>
     );
 };
-
-const ClasesInfo = (props) => {
-  return (
-    <div className="container-levels">
-      {/* container for the imgs and title */}
-      <div className="container-levels-img">
-        <div id='basic-level' className="level-info">
-          <img className="level-img" src={image_link} />
-          <p className="level-name">Basic Level</p>
-        </div>
-        <div id='medium-level' className="level-info">
-          <img className="level-img" src={image_link} />
-          <p className="level-name">Medium Level</p>
-        </div>
-        <div id='advanced-level' className="level-info">
-          <img className="level-img" src={image_link} />
-          <p className="level-name">Advance Level</p>
-        </div>
-      </div>
-
-      {/* container for the info */}
-      <div className="container-levels-info">
-        <div id='basic-level' className="level-info">
-          <p className="level-text">You don't have pajolera idea to talk catalan, you only know that Catalonia is inside Spain</p>
-        </div>
-        <div id='medium-level' className="level-info">
-          <p className="level-text">You know things and some words, but you need grammar and more vocabulary. You know someone who talks it and tried to teach you while drunk.</p>
-        </div>
-        <div id='advanced-level' className="level-info">
-          <p className="level-text">You know how to talk catalan, but you need someone who talk with and ccorrects you. And teaches you some advanced stuff.</p>
-          <p className="level-text">(In the future)</p>
-        </div>
-      </div>
-
-      {/* container for the schedule */}
-      <div className="container-levels-time">
-        <div id='basic-level-time' className="level-schedule">
-          {/* <p className="level-time">Tuesdays:<br/>18:00-19:30h</p> */}
-        </div>
-        <div id='medium-level-time' className="level-schedule">
-          {/* <p className="level-time">Wednesdays:<br/>18:00-19:30h</p> */}
-        </div>
-        <div id='advanced-level-time' className="level-schedule">
-          {/* <p className="level-time not-available">Not available for now.</p> */}
-          <div className="btn2contact">
-            <a>Write Us if Interested</a>
-            <a href='#contact-section'><span className="link2contact"></span></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
 
 const SubQuestion = (props) => {
   return (
