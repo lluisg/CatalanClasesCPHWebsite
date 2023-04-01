@@ -5,7 +5,7 @@ const Contact = (props) => {
       <div className='contact-body'>
         <div className="container mb-5">
           <p className="text-center h4">Please use the following form if you want to get in touch directly.</p>
-          <form id="contact-form" action="https://formsubmit.co/el/makuzo" method="POST" className="p-4" encType="multipart/form-data">
+          <form id="contact-form" action="https://formsubmit.co/mariacambeiro96@gmail.com" method="POST" className="p-4" encType="multipart/form-data">
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="table" />
 
