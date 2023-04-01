@@ -107,26 +107,27 @@ nav{
   background-color: black;
 }
 
+/* @media (max-width: 992px){
+  nav{ background-color: orange; }
+}
+@media (max-width: 768px){
+  nav{ background-color: red; }
+}
+@media (max-width: 576px){
+  nav{ background-color: blue; }
+}
+@media (max-width: 410px){
+  nav{ background-color: green; }
+} */
 
 @media (max-width: 992px){
-  nav{
-    background-color: orange;
-  }
 }
-
 @media (max-width: 768px){
-  nav{
-    background-color: red;
-  }
   .logo-div{
     margin: 0 10px;
   }
 }
-
 @media (max-width: 576px){
-  nav{
-    background-color: blue;
-  }
   .logo-div{
     margin: 0 5px;
   }
@@ -135,11 +136,7 @@ nav{
     font-size: 1.4rem;
   }
 }
-
 @media (max-width: 410px){
-  nav{
-    background-color: green;
-  }
   .nav-item{
     font-size: 1.3rem;
   }
@@ -432,44 +429,74 @@ main{
 
 
 /*------------------------------------ METHODOLOGY ----------------------------------------*/
-.method-section{
-  background-color: var(--bg-section-method);
-}
-
 .method-body{
-  width: 95%;
+  width: 80%;
   margin: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
   /* border: 2px solid red; */
 }
 
 .method-text{
-  width: 70%;
-  display: flex;
-  flex-direction: row;
   font-size: 1.2rem;
   text-align: justify;
-  justify-content: center;
+  padding-left: 15px;
   /* border: 2px solid green; */
 }
 
+.text-method{
+  margin: 0;
+  /* border: 2px solid lightblue; */
+}
+
 .method-img{
-  margin-right: 30px;
+  width: 250px;
+  min-width: 150px;
+  /* border: 2px solid purple; */
 }
 
 #image-method{
-  width: 180px;
+  width: 100%;
   aspect-ratio: 1/1;
   border-radius: 20px;
+  /* border: 2px solid black; */
 }
+
+@media (max-width: 992px){
+  .method-body{
+    width: 85%;
+  }
+}
+@media (max-width: 768px){
+  .method-body{
+    width: 90%;
+  }
+  .method-text{
+    font-size: 1rem;
+  }
+}
+@media (max-width: 576px){
+  .method-body{
+    width: 95%;
+    flex-direction: column;
+  }
+  .method-img{
+    width: 100px;
+  }
+  .method-text{
+    padding-left: 0;
+  }
+}
+@media (max-width: 410px){
+}
+
 
 /*------------------------------------ INFO ----------------------------------------*/
 
 .info-card{
-  width: 500px;
+  width: 90%;
+  max-width: 500px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -488,7 +515,6 @@ main{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  padding: 0 10px;
 }
 
 /* --- question --- */
@@ -581,9 +607,23 @@ main{
   #maps{
     width: 200px;
   }
-  .info-ubi-name{
-    font-size: 1.5rem;
+  .question-info{
+    font-size: 1.3rem;
   }
+  .info-ubi-name, .info-price-money, .info-date-dayweek{
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+  .info-ubi-ubi, .info-ubi-map, .info-date-days{
+    font-size: 0.9rem;
+  }
+  .info-price-sessions, .info-date-hour{
+    font-size: 1.3rem;
+
+  }
+  /* info-ubi-name">Skolen Ved Bülosvej</p>
+          <p className="info-ubi-ubi">Fuglevangsvej 8,<br/> 1962 Frederiksberg</p>
+          <a className="info-ubi-map" */
 }
 @media (max-width: 410px) {
   #maps{
