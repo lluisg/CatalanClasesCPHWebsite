@@ -415,6 +415,7 @@ main{
   .about-img{
     width: 150px;
     margin-top: 0;
+    margin-bottom: 15px;
   }
   .about-text{
     width: 100%;
@@ -483,6 +484,7 @@ main{
   }
   .method-img{
     width: 100px;
+    margin-bottom: 15px;
   }
   .method-text{
     padding-left: 0;
