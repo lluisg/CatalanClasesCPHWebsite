@@ -7,7 +7,7 @@ const Contact = (props) => {
           <p className="text-center h4">Please use the following form if you want to get in touch directly.</p>
           <form id="contact-form" action="https://formsubmit.co/f1aa8b04c973b5f015f60fb3e5245d09" method="POST" className="p-4" encType="multipart/form-data">
               <input type="hidden" name="_captcha" value="false" />
-              {/* <input type="hidden" name="_next" value="https://www.lluisguardia.host" /> */}
+              <input type="hidden" name="_next" value="https://catalanincph.onrender.com/" />
               <input type="hidden" name="_template" value="table" />
 
               <div className="container-form-top">
