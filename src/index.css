@@ -308,6 +308,26 @@ main{
   z-index: 1;
 }   
 
+/* --- little text catalans dk --- */
+.attribution {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+}
+
+.attribution-text {
+  font-size: 14px;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.attribution-logo {
+  height: 30px;
+  vertical-align: middle;
+}
+
 @media (max-width: 992px){
   .text-front{
     font-size: 4rem;
@@ -675,4 +695,46 @@ main{
   .container-form-top{
     flex-direction: column;
   }
+}
+
+/* ----------------------------- QUESTIONNAIRE ------------------------------------------- */
+
+.div-questionarie{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+
+.text-questionnaire{
+  width: 90%;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+#btn-questionnaire {
+  width: 200px;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+#btn-questionnaire:hover {
+  background-color: #3e8e41;
+  color: white;
+}
+#btn-questionnaire:active {
+  background-color: #3e8e41;
+  transform: translateY(2px);
+  box-shadow: none;
 }

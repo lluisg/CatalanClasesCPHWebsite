@@ -3,8 +3,12 @@ const Contact = (props) => {
     <div id="contact-section" className='section contact-section card-section'>
       <h1 className="title-section">Contact</h1>
       <div className='contact-body'>
+        <div className="div-questionarie">
+          <p className="text-questionnaire">If you are interested in signing up, please fill out the questionnaire using the following link.</p>
+          <button id="btn-questionnaire">QUESTIONNAIRE</button>
+        </div>
         <div className="container mb-5">
-          <p className="text-center h4">Please use the following form if you want to get in touch directly.</p>
+          <p className="text-center h4">Use the following form if have any additional question or you want to get in touch directly.</p>
           <form id="contact-form" action="https://formsubmit.co/1e509e8edee6b2ac2d36c98a64aca236" method="POST" className="p-4" encType="multipart/form-data">
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="table" />

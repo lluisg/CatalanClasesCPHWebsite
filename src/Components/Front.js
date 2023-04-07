@@ -1,4 +1,5 @@
 import logo from '../assets/logo.png';
+import catdk from '../assets/catalansdk.png';
 
 const Front = (props) => {
   return (
@@ -20,6 +21,10 @@ const Front = (props) => {
             <a>Contact Us!</a>
             <a href='#contact-section'><span className="link2contact"></span></a>
           </div>
+        </div>
+        <div className="attribution">
+          <span className="attribution-text">with the help of</span>
+          <img className="attribution-logo" src={catdk} alt="logo" />
         </div>
       </div>
     </div>

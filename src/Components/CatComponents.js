@@ -15,6 +15,14 @@ class CatalanWeb extends React.Component {
     }
   }
 
+  componentDidMount(){
+    var button = document.getElementById("btn-questionnaire");
+    button.onclick = function() {
+      window.open("https://docs.google.com/forms/d/e/1FAIpQLSfC1LPXbUajcyqPK0tc2kn5lKc_13benogEfxVJ-KpUl5lVeQ/viewform",
+      '_blank');
+    }
+  }
+
   render() {
     return (
       <div className="body">
