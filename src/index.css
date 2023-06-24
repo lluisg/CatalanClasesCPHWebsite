@@ -529,7 +529,32 @@ main{
   box-shadow: 5px 5px 10px black;
 }
 
+.title-type-class{
+  text-align: center;
+  font-weight: bolder;
+  font-size: 2rem;
+  /* color: red; */
+}
+
 .info-body{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items:flex-start;
+}
+
+.info-subbody{
+  width: 40%;
+  height: auto;
+  border: 2px solid black;
+  padding: 2rem 1rem ;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container-subbody{
+  margin: 1.5rem 0;
 }
 
 .container-info{
@@ -537,6 +562,12 @@ main{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+
+#image-logozoom{
+  width: 40px;
+  aspect-ratio: 1/1;
+  border-radius: 20px;
 }
 
 /* --- question --- */
@@ -584,7 +615,7 @@ main{
 
 /* --- ubication --- */
 #maps{
-  width: 450px;
+  width: 300px;
   aspect-ratio: 1.5/1;
   border: 1px solid black;
   border-radius: 5px;
@@ -617,17 +648,27 @@ main{
 
 @media (max-width: 992px) {
   #maps{
-    width: 400px;
+    width: 230px;
+    border: 2px solid green;
   }
 }
 @media (max-width: 768px) {
   #maps{
     width: 300px;
+    border: 2px solid blue;
+  }
+  .info-body{
+    flex-direction: column;
+    justify-content: center;
+  }
+  .info-subbody{
+    width: 90%;
   }
 }
 @media (max-width: 576px) {
   #maps{
     width: 200px;
+    border: 2px solid yellow;
   }
   .question-info{
     font-size: 1.3rem;
@@ -641,15 +682,12 @@ main{
   }
   .info-price-sessions, .info-date-hour{
     font-size: 1.3rem;
-
   }
-  /* info-ubi-name">Skolen Ved Bülosvej</p>
-          <p className="info-ubi-ubi">Fuglevangsvej 8,<br/> 1962 Frederiksberg</p>
-          <a className="info-ubi-map" */
 }
 @media (max-width: 410px) {
   #maps{
     width: 150px;
+    border: 2px solid red;
   }
   .info-ubi-name{
     font-size: 1.3rem;

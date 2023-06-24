@@ -16,7 +16,7 @@ const Front = (props) => {
         </div>
         <div className="bubble">
           <div className="btn2contact">
-            <a>Classes start on the 17-04-23</a>
+            <a>Classes start on the 04-09-23</a>
             <a>Limited number of students</a>
             <a>Contact Us!</a>
             <a href='#contact-section'><span className="link2contact"></span></a>
