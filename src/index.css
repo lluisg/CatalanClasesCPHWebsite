@@ -649,13 +649,13 @@ main{
 @media (max-width: 992px) {
   #maps{
     width: 230px;
-    border: 2px solid green;
+    border: 2px solid black;
   }
 }
 @media (max-width: 768px) {
   #maps{
     width: 300px;
-    border: 2px solid blue;
+    border: 2px solid black;
   }
   .info-body{
     flex-direction: column;
@@ -668,7 +668,7 @@ main{
 @media (max-width: 576px) {
   #maps{
     width: 200px;
-    border: 2px solid yellow;
+    border: 2px solid black;
   }
   .question-info{
     font-size: 1.3rem;
@@ -687,7 +687,7 @@ main{
 @media (max-width: 410px) {
   #maps{
     width: 150px;
-    border: 2px solid red;
+    border: 2px solid black;
   }
   .info-ubi-name{
     font-size: 1.3rem;
